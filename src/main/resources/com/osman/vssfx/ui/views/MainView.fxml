@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.osman.vssfx.ui.controllers.MainController">
+
+    <!-- Üst bar: Tema seçici -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 8 12;">
+            <Label text="Tema:"/>
+            <ComboBox fx:id="themeBox" prefWidth="140"/>
+        </HBox>
+    </top>
+
+    <!-- Ana içerik: Sekmeler -->
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Araçlar">
+                <fx:include source="VehiclesView.fxml"/>
+            </Tab>
+
+            <Tab text="Sürücüler">
+                <fx:include source="PlaceholderView.fxml"/>
+            </Tab>
+
+            <Tab text="Bakım">
+                <fx:include source="MaintenanceView.fxml"/>
+            </Tab>
+
+            <Tab text="Müşteriler">
+                <fx:include source="CustomersView.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+
+</BorderPane>

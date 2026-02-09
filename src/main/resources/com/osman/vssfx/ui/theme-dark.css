@@ -1,0 +1,517 @@
+/* ---- Root / Base ---- */
+.root {
+    -fx-base: #0b1220;
+    -fx-background: #0b1220;
+    -fx-control-inner-background: #0f172a;
+
+    -fx-font-smoothing-type: gray;
+    -fx-accent: #3b82f6;
+    -fx-focus-color: rgba(59,130,246,0.65);
+    -fx-faint-focus-color: rgba(59,130,246,0.18);
+}
+
+/* App background */
+.border-pane,
+.stack-pane,
+.anchor-pane,
+.split-pane {
+    -fx-background-color: #0b1220;
+}
+
+/* ---- Typography ---- */
+.label {
+    -fx-text-fill: #e5e7eb;
+}
+.label:disabled {
+    -fx-text-fill: rgba(229,231,235,0.45);
+}
+
+/* ---- Cards (USE CLASS OR ID) ---- */
+.card,
+#vehicleFormCard {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(148,163,184,0.25);
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-padding: 12;
+
+    /* subtle depth */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 18, 0.25, 0, 6);
+}
+
+/* Section title (apply via styleClass in code) */
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #f8fafc;
+}
+
+/* ---- Text Input Controls ---- */
+.text-field,
+.password-field,
+.text-area,
+.combo-box-base,
+.date-picker {
+    -fx-background-color: #0f172a;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(148,163,184,0.30);
+    -fx-border-width: 1;
+    -fx-text-fill: #e5e7eb;
+    -fx-prompt-text-fill: rgba(229,231,235,0.45);
+    -fx-padding: 8 10;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+}
+
+/* Focus ring */
+.text-field:focused,
+.password-field:focused,
+.text-area:focused,
+.combo-box-base:focused,
+.date-picker:focused {
+    -fx-border-color: rgba(59,130,246,0.85);
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.22), 14, 0.2, 0, 0);
+}
+
+/* Disabled */
+.text-field:disabled,
+.password-field:disabled,
+.text-area:disabled,
+.combo-box-base:disabled,
+.date-picker:disabled {
+    -fx-opacity: 0.6;
+}
+
+/* ComboBox popup */
+.combo-box-popup .list-view {
+    -fx-background-color: #0f172a;
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(148,163,184,0.25);
+    -fx-border-radius: 12;
+}
+.combo-box-popup .list-cell {
+    -fx-text-fill: #e5e7eb;
+    -fx-background-color: transparent;
+    -fx-padding: 8 10;
+}
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(59,130,246,0.18);
+}
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: rgba(59,130,246,0.28);
+}
+
+/* ---- Buttons ---- */
+.button {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: #e5e7eb;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(148,163,184,0.28);
+    -fx-border-width: 1;
+    -fx-padding: 8 14;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: rgba(255,255,255,0.10);
+}
+.button:pressed {
+    -fx-background-color: rgba(255,255,255,0.14);
+}
+.button:disabled {
+    -fx-opacity: 0.6;
+}
+
+/* Primary button (add style class "primary") */
+.button.primary {
+    -fx-background-color: rgba(59,130,246,0.90);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(59,130,246,0.95);
+}
+.button.primary:hover {
+    -fx-background-color: rgba(59,130,246,1.0);
+}
+.button.primary:pressed {
+    -fx-background-color: rgba(37,99,235,1.0);
+}
+
+/* Danger button (add style class "danger") */
+.button.danger {
+    -fx-background-color: rgba(239,68,68,0.86);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(239,68,68,0.95);
+}
+.button.danger:hover {
+    -fx-background-color: rgba(239,68,68,1.0);
+}
+.button.danger:pressed {
+    -fx-background-color: rgba(220,38,38,1.0);
+}
+
+/* Ghost button (optional: refresh etc.) */
+.button.ghost {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(148,163,184,0.25);
+}
+.button.ghost:hover {
+    -fx-background-color: rgba(255,255,255,0.06);
+}
+
+/* ---- TabPane (Modern) ---- */
+.tab-pane .tab-header-area {
+    -fx-background-color: #0b1220;
+    -fx-padding: 8 10 0 10;
+}
+.tab-pane .tab-header-background {
+    -fx-background-color: #0b1220;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #111827;
+    -fx-background-radius: 10 10 0 0;
+    -fx-padding: 8 14;
+    -fx-border-color: rgba(148,163,184,0.18);
+    -fx-border-width: 1 1 0 1;
+    -fx-border-radius: 10 10 0 0;
+}
+.tab-pane .tab:selected {
+    -fx-background-color: #0f172a;
+    -fx-border-color: rgba(59,130,246,0.55);
+    -fx-border-width: 1 1 0 1;
+}
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #e5e7eb;
+    -fx-font-weight: 800;
+}
+.tab-pane .tab:hover {
+    -fx-background-color: rgba(255,255,255,0.06);
+}
+
+/* ---- TableView ---- */
+.table-view {
+    -fx-background-color: #0f172a;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(148,163,184,0.25);
+    -fx-border-width: 1;
+
+    /* modern breathing room */
+    -fx-padding: 6;
+}
+
+/* Header */
+.table-view .column-header-background {
+    -fx-background-color: #111827;
+    -fx-background-radius: 12 12 0 0;
+}
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: #111827;
+    -fx-size: 38px;
+    -fx-border-color: transparent;
+}
+.table-view .column-header .label {
+    -fx-text-fill: #e5e7eb;
+    -fx-font-weight: 900;
+}
+
+/* Cells / rows */
+.table-row-cell {
+    -fx-background-color: #0f172a;
+    -fx-cell-size: 40px; /* row height */
+}
+.table-row-cell:odd {
+    -fx-background-color: #0b1220;
+}
+.table-row-cell:hover {
+    -fx-background-color: rgba(59,130,246,0.12);
+}
+.table-row-cell:selected {
+    -fx-background-color: rgba(59,130,246,0.22); /* premium tint */
+}
+.table-cell {
+    -fx-text-fill: #e5e7eb;
+    -fx-padding: 10 10;
+}
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #e5e7eb;
+}
+
+/* Softer grid lines */
+.table-view .table-cell {
+    -fx-border-color: rgba(148,163,184,0.08);
+}
+
+/* ---- Scrollbar ---- */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+.scroll-bar .track {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 999;
+}
+.scroll-bar .thumb {
+    -fx-background-color: rgba(148,163,184,0.35);
+    -fx-background-radius: 999;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(148,163,184,0.50);
+}
+
+/* ---- Separators ---- */
+.separator:horizontal .line,
+.separator:vertical .line {
+    -fx-border-color: rgba(148,163,184,0.18);
+}
+/* ===== DatePicker Popup (Dark) ===== */
+.date-picker-popup {
+    -fx-background-color: #0f172a;
+    -fx-border-color: rgba(148,163,184,0.22);
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 22, 0.25, 0, 10);
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #111827;
+    -fx-background-radius: 10;
+    -fx-padding: 8 10;
+}
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #e5e7eb;
+    -fx-font-weight: 800;
+}
+
+.date-picker-popup .spinner .button {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-border-color: rgba(148,163,184,0.20);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+.date-picker-popup .spinner .button:hover {
+    -fx-background-color: rgba(255,255,255,0.10);
+}
+
+.date-picker-popup .calendar-grid {
+    -fx-background-color: transparent;
+    -fx-padding: 8 4 4 4;
+}
+
+.date-picker-popup .day-name-cell {
+    -fx-text-fill: rgba(229,231,235,0.75);
+    -fx-font-weight: 700;
+}
+
+.date-picker-popup .day-cell {
+    -fx-background-radius: 10;
+    -fx-text-fill: #e5e7eb;
+}
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: rgba(59,130,246,0.18);
+}
+.date-picker-popup .day-cell:focused {
+    -fx-border-color: rgba(59,130,246,0.75);
+    -fx-border-radius: 10;
+}
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: rgba(59,130,246,0.35);
+    -fx-text-fill: #e5e7eb;
+}
+.date-picker-popup .today {
+    -fx-border-color: rgba(59,130,246,0.55);
+    -fx-border-radius: 10;
+}
+/* ===== Tabs: cleaner, modern ===== */
+.tab-pane .tab {
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.tab-pane .tab:selected {
+    -fx-border-width: 1;
+}
+/* ===== DatePicker Popup (Dark) ===== */
+.date-picker-popup {
+    -fx-background-color: #0f172a;
+    -fx-border-color: rgba(148,163,184,0.22);
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 22, 0.25, 0, 10);
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #111827;
+    -fx-background-radius: 10;
+    -fx-padding: 8 10;
+}
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #e5e7eb;
+    -fx-font-weight: 800;
+}
+
+.date-picker-popup .spinner .button {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-border-color: rgba(148,163,184,0.20);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+.date-picker-popup .spinner .button:hover {
+    -fx-background-color: rgba(255,255,255,0.10);
+}
+
+.date-picker-popup .calendar-grid {
+    -fx-background-color: transparent;
+    -fx-padding: 8 4 4 4;
+}
+
+.date-picker-popup .day-name-cell {
+    -fx-text-fill: rgba(229,231,235,0.75);
+    -fx-font-weight: 700;
+}
+
+.date-picker-popup .day-cell {
+    -fx-background-radius: 10;
+    -fx-text-fill: #e5e7eb;
+}
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: rgba(59,130,246,0.18);
+}
+.date-picker-popup .day-cell:focused {
+    -fx-border-color: rgba(59,130,246,0.75);
+    -fx-border-radius: 10;
+}
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: rgba(59,130,246,0.35);
+    -fx-text-fill: #e5e7eb;
+}
+.date-picker-popup .today {
+    -fx-border-color: rgba(59,130,246,0.55);
+    -fx-border-radius: 10;
+}
+/* ===== DatePicker Popup - Extra polish (Dark) ===== */
+
+/* soften the nav buttons */
+.date-picker-popup .spinner .button {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-border-color: rgba(148,163,184,0.14);
+    -fx-padding: 6 8;
+}
+.date-picker-popup .spinner .button:hover {
+    -fx-background-color: rgba(255,255,255,0.08);
+}
+
+/* soften day cell grid look */
+.date-picker-popup .day-cell {
+    -fx-border-color: rgba(148,163,184,0.10);
+    -fx-border-radius: 10;
+}
+.date-picker-popup .day-cell:disabled {
+    -fx-text-fill: rgba(229,231,235,0.35);
+}
+
+/* selected: a bit more premium */
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: rgba(59,130,246,0.28);
+    -fx-text-fill: #ffffff;
+}
+/* ===== DatePicker: hide days from other months (Dark) ===== */
+.date-picker-popup .day-cell.previous-month,
+.date-picker-popup .day-cell.next-month {
+    -fx-opacity: 0;        /* tamamen görünmesin */
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+/* ===== Table Status Badge (Dark) ===== */
+.table-cell.badge-active,
+.table-cell.badge-inservice,
+.table-cell.badge-assigned,
+.table-cell.badge-inactive {
+    -fx-alignment: CENTER;
+    -fx-font-weight: 800;
+    -fx-padding: 6 10;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-width: 1;
+}
+
+.table-cell.badge-active {
+    -fx-text-fill: #d1fae5;
+    -fx-background-color: rgba(16,185,129,0.18);
+    -fx-border-color: rgba(16,185,129,0.35);
+}
+
+.table-cell.badge-inservice {
+    -fx-text-fill: #bfdbfe;
+    -fx-background-color: rgba(59,130,246,0.18);
+    -fx-border-color: rgba(59,130,246,0.35);
+}
+
+.table-cell.badge-assigned {
+    -fx-text-fill: #fde68a;
+    -fx-background-color: rgba(245,158,11,0.18);
+    -fx-border-color: rgba(245,158,11,0.35);
+}
+
+.table-cell.badge-inactive {
+    -fx-text-fill: rgba(229,231,235,0.75);
+    -fx-background-color: rgba(148,163,184,0.14);
+    -fx-border-color: rgba(148,163,184,0.22);
+}
+/* ===== Table Status Badge (Dark) ===== */
+.table-cell.badge-active,
+.table-cell.badge-inservice,
+.table-cell.badge-assigned,
+.table-cell.badge-inactive {
+    -fx-alignment: CENTER;
+    -fx-font-weight: 800;
+    -fx-padding: 6 10;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-width: 1;
+}
+
+.table-cell.badge-active {
+    -fx-text-fill: #d1fae5;
+    -fx-background-color: rgba(16,185,129,0.18);
+    -fx-border-color: rgba(16,185,129,0.35);
+}
+
+.table-cell.badge-inservice {
+    -fx-text-fill: #bfdbfe;
+    -fx-background-color: rgba(59,130,246,0.18);
+    -fx-border-color: rgba(59,130,246,0.35);
+}
+
+.table-cell.badge-assigned {
+    -fx-text-fill: #fde68a;
+    -fx-background-color: rgba(245,158,11,0.18);
+    -fx-border-color: rgba(245,158,11,0.35);
+}
+
+.table-cell.badge-inactive {
+    -fx-text-fill: rgba(229,231,235,0.75);
+    -fx-background-color: rgba(148,163,184,0.14);
+    -fx-border-color: rgba(148,163,184,0.22);
+}
+/* Badge stays visible even when row is hovered/selected */
+.table-row-cell:hover .table-cell.badge-active,
+.table-row-cell:hover .table-cell.badge-inservice,
+.table-row-cell:hover .table-cell.badge-assigned,
+.table-row-cell:hover .table-cell.badge-inactive,
+.table-row-cell:selected .table-cell.badge-active,
+.table-row-cell:selected .table-cell.badge-inservice,
+.table-row-cell:selected .table-cell.badge-assigned,
+.table-row-cell:selected .table-cell.badge-inactive {
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}

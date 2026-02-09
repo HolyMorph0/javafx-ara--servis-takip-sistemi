@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.osman.vssfx.ui.controllers.MaintenanceController">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Araç:"/>
+            <ComboBox fx:id="vehicleBox" prefWidth="360" promptText="Araç seçin..."/>
+
+            <Button text="Yenile" onAction="#onRefresh" styleClass="ghost"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="table" prefHeight="600">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="70"/>
+                <TableColumn fx:id="colDate" text="Tarih" prefWidth="120"/>
+                <TableColumn fx:id="colType" text="Bakım Türü" prefWidth="170"/>
+                <TableColumn fx:id="colKm" text="KM" prefWidth="110"/>
+                <TableColumn fx:id="colCost" text="Tutar" prefWidth="110"/>
+                <TableColumn fx:id="colDesc" text="Açıklama" prefWidth="260"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <right>
+        <VBox fx:id="formCard" id="maintenanceFormCard" spacing="10" prefWidth="340" styleClass="card">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Bakım Kaydı" styleClass="section-title"/>
+
+            <DatePicker fx:id="datePicker" promptText="Tarih"/>
+
+            <TextField fx:id="typeField" promptText="Bakım türü (örn: Yağ değişimi)"/>
+
+            <HBox spacing="10">
+                <TextField fx:id="kmField" promptText="KM"/>
+                <TextField fx:id="costField" promptText="Tutar (₺)"/>
+            </HBox>
+
+            <TextArea fx:id="descArea" promptText="Açıklama" prefRowCount="4"/>
+
+            <HBox spacing="10">
+                <Button text="Ekle" onAction="#onAdd" styleClass="primary"/>
+                <Button text="Güncelle" onAction="#onUpdate" styleClass="primary"/>
+                <Button text="Sil" onAction="#onDelete" styleClass="danger"/>
+                <Button text="Temizle" onAction="#onClear"/>
+            </HBox>
+
+            <Label fx:id="msgLabel" wrapText="true"/>
+        </VBox>
+    </right>
+
+</BorderPane>

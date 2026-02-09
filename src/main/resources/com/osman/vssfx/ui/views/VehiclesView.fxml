@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.osman.vssfx.ui.controllers.VehiclesController">
+
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Ara:"/>
+            <TextField fx:id="searchField" promptText="plaka / marka / model" HBox.hgrow="ALWAYS"/>
+            <Button text="Yenile" onAction="#onRefresh" styleClass="ghost"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="table" prefHeight="600">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="70"/>
+                <TableColumn fx:id="colPlate" text="Plaka" prefWidth="120"/>
+                <TableColumn fx:id="colMake" text="Marka" prefWidth="140"/>
+                <TableColumn fx:id="colModel" text="Model" prefWidth="140"/>
+                <TableColumn fx:id="colYear" text="Yıl" prefWidth="90"/>
+                <TableColumn fx:id="colKm" text="KM" prefWidth="100"/>
+                <TableColumn fx:id="colStatus" text="Durum" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <right>
+        <!-- fx:id = controller reference, id = CSS selector -->
+        <VBox fx:id="vehicleFormCard" id="vehicleFormCard" spacing="10" prefWidth="320" styleClass="card">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Araç Formu" styleClass="section-title"/>
+
+            <TextField fx:id="plateField" promptText="Plaka"/>
+            <TextField fx:id="makeField" promptText="Marka"/>
+            <TextField fx:id="modelField" promptText="Model"/>
+
+            <HBox spacing="10">
+                <TextField fx:id="yearField" promptText="Yıl"/>
+                <TextField fx:id="kmField" promptText="KM"/>
+            </HBox>
+
+            <TextField fx:id="colorField" promptText="Renk (isteğe bağlı)"/>
+
+            <ComboBox fx:id="statusBox" promptText="Durum"/>
+            <DatePicker fx:id="serviceDatePicker" promptText="Servise giriş tarihi"/>
+
+            <TextArea fx:id="notesArea" promptText="Notlar" prefRowCount="4"/>
+
+            <HBox spacing="10">
+                <Button text="Ekle" onAction="#onAdd" styleClass="primary"/>
+                <Button text="Güncelle" onAction="#onUpdate" styleClass="primary"/>
+                <Button text="Sil" onAction="#onDelete" styleClass="danger"/>
+                <Button text="Temizle" onAction="#onClear"/>
+            </HBox>
+
+            <Label fx:id="msgLabel" wrapText="true"/>
+        </VBox>
+    </right>
+
+</BorderPane>

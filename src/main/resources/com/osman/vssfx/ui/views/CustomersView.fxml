@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.osman.vssfx.ui.controllers.CustomersController">
+
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Ara:"/>
+            <TextField fx:id="searchField" promptText="ad / soyad / telefon / e-posta" HBox.hgrow="ALWAYS"/>
+            <Button text="Yenile" onAction="#onRefresh" styleClass="ghost"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="table" prefHeight="600">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                <TableColumn fx:id="colFirstName" text="Ad" prefWidth="160"/>
+                <TableColumn fx:id="colLastName" text="Soyad" prefWidth="160"/>
+                <TableColumn fx:id="colPhone" text="Telefon" prefWidth="160"/>
+                <TableColumn fx:id="colEmail" text="E-posta" prefWidth="220"/>
+                <TableColumn fx:id="colCreatedAt" text="Oluşturma" prefWidth="170"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <right>
+        <VBox fx:id="customerFormCard" id="customerFormCard" spacing="10" prefWidth="340" styleClass="card">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Müşteri Formu" styleClass="section-title"/>
+
+            <TextField fx:id="firstNameField" promptText="Ad"/>
+            <TextField fx:id="lastNameField" promptText="Soyad"/>
+            <TextField fx:id="phoneField" promptText="Telefon (isteğe bağlı)"/>
+            <TextField fx:id="emailField" promptText="E-posta (isteğe bağlı)"/>
+
+            <HBox spacing="10">
+                <Button text="Ekle" onAction="#onAdd" styleClass="primary"/>
+                <Button text="Güncelle" onAction="#onUpdate" styleClass="primary"/>
+                <Button text="Sil" onAction="#onDelete" styleClass="danger"/>
+                <Button text="Temizle" onAction="#onClear"/>
+            </HBox>
+
+            <Label fx:id="msgLabel" wrapText="true"/>
+        </VBox>
+    </right>
+
+</BorderPane>

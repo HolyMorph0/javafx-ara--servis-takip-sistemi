@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.osman.vssfx.ui.controllers.LoginController">
+
+    <children>
+        <StackPane prefWidth="1100.0" prefHeight="700.0"
+                   AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+            <VBox spacing="14.0" maxWidth="420.0"
+                  style="-fx-background-radius: 16; -fx-padding: 22;">
+                <padding><Insets top="22" right="22" bottom="22" left="22"/></padding>
+
+                <Label text="Giriş Yap">
+                    <font><Font size="24"/></font>
+                </Label>
+
+                <Label text="Araç takip sistemine devam etmek için giriş yapın."
+                       wrapText="true" style="-fx-opacity: 0.85;"/>
+
+                <Separator />
+
+                <VBox spacing="8">
+                    <Label text="Tenant ID" />
+                    <TextField fx:id="tenantIdField" promptText="Örn: 1" />
+
+                    <Label text="E-posta" />
+                    <TextField fx:id="emailField" promptText="ornek@domain.com" />
+
+                    <Label text="Şifre" />
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <StackPane HBox.hgrow="ALWAYS">
+                            <PasswordField fx:id="passwordField" promptText="Şifreniz"/>
+                            <TextField fx:id="passwordVisibleField" promptText="Şifreniz"
+                                       visible="false" managed="false"/>
+                        </StackPane>
+
+                        <ToggleButton fx:id="showPasswordBtn" text="👁" focusTraversable="false"
+                                      onAction="#onTogglePassword"
+                                      style="-fx-background-radius: 10; -fx-min-width: 46; -fx-min-height: 36;"/>
+                    </HBox>
+                </VBox>
+
+                <Button fx:id="loginBtn" maxWidth="1.7976931348623157E308" onAction="#onLogin">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER">
+                            <ProgressIndicator fx:id="loginSpinner"
+                                               visible="false" managed="false"
+                                               prefWidth="16" prefHeight="16"/>
+                            <Label fx:id="loginBtnText" text="Giriş"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+
+                <!-- Kayıt Ol satırı -->
+                <HBox alignment="CENTER" spacing="6">
+                    <Label text="Hesabın yok mu?" style="-fx-opacity: 0.85;"/>
+                    <Hyperlink text="Kayıt Ol" onAction="#onGoRegister"/>
+                </HBox>
+
+                <Label fx:id="msgLabel" text="" wrapText="true" style="-fx-text-fill: #d64545;" />
+            </VBox>
+        </StackPane>
+    </children>
+</AnchorPane>
